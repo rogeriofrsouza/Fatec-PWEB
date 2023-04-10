@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Atividade 7</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="https://www.flaticon.com/free-icons/rock-paper-scissors" title="rock paper scissors icons" target="_blank">
+      <img src="icons/rock-paper-scissors.png" alt="Rock paper scissors icons created by Freepik - Flaticon" title="Rock paper scissors icons created by Freepik - Flaticon">
+    </a>
+    <h1>Pedra, papel ou tesoura</h1>
+  </header>
+
+  <main>
+    <section class="container">
+      <h3>Escolha uma opção!</h3>
+
+      <div class="flex-container">
+        <div class="card" onclick="jogar('pedra')">
+          <img class="card-img pedra" src="icons/rock.png" alt="Imagem representando uma pedra" title="Pedra">
+        </div>
+        <div class="card" onclick="jogar('papel')">
+          <img class="card-img papel" src="icons/paper.png" alt="Imagem representando o papel" title="Papel">
+        </div>
+        <div class="card" onclick="jogar('tesoura')">
+          <img class="card-img tesoura" src="icons/scissors.png" alt="Imagem representando a tesoura" title="Tesoura">
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div id="output"></div>
+    </section>
+  </main>
+
+  <footer>Feito com ❤️ por Rogério Ferreira&copy;</footer>  
+  
+  <script src="script.js"></script>
+</body>
+</html>

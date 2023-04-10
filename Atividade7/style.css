@@ -1,0 +1,91 @@
+/* ===== RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  outline: 0;
+  cursor: pointer;
+  border: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap');
+
+/* ===== BASE ========== */
+html, 
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+/* ===== LAYOUT ========== */
+.container {
+  margin: 16px auto;
+  width: 72%;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 32px;
+  gap: 16px;
+}
+
+.grid {
+  display: grid;
+  place-items: center;
+}
+
+header, 
+footer {
+  padding: 16px;
+  text-align: center;
+}
+
+h1, h3 {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+header a img {
+  height: 40px;
+}
+
+.card {
+  display: grid;
+  place-items: center;
+
+  height: 160px;
+  width: 30%;
+  max-width: 160px;
+
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  background-color: #fafafa;
+}
+
+#output div {
+  width: 64%;
+  max-width: 440px;
+  margin: 0 auto;
+
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
