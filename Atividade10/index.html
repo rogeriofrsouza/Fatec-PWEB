@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Atividade 10</title>
+</head>
+
+<body>
+
+  <script>
+    var aluno1 = new Object();
+    aluno1.ra = 0123456;
+    aluno1.nome = 'Pedro da Silva';
+    alert('RA: ' + aluno1.ra + '\nNome: ' + aluno1.nome);
+    
+    // Literal object
+    var aluno2 = {};
+    aluno2.ra = 1234;
+    aluno2["nome"] = 'Matheus Barbosa';
+    alert('RA: ' + aluno2.ra + '\nNome: ' + aluno2["nome"]);
+
+    var aluno3 = {
+      ra: 78910,
+      nome: 'Rafael Arantes'
+    };
+    alert('RA: ' + aluno3.ra + '\nNome: ' + aluno3["nome"]);
+
+    // Constructor
+    function Aluno(ra, nome) {
+      this.ra = ra;
+      this.nome = nome;
+      this.mostraDados = () => alert('RA: ' + this.ra + '\nNome: ' + this.nome);
+    }
+
+    var aluno4 = new Aluno('123', 'Lucas');
+    aluno4.mostraDados();
+  </script>
+</body>
+</html>

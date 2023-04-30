@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Atividade 11</title>
+  </head>
+
+  <body>
+    <script>
+      /* 
+        1. Crie uma função construtora para o Retângulo receber (x,y) ou seja, base e altura, com um método para calcular
+        a área. Criar um objeto e executar o método que calcula a área. Não precisa utilizar get e set na função construtora.
+      */
+      function Retangulo(x, y) {
+        this.base = x;
+        this.altura = y;
+        this.calcArea = () => this.base * this.altura;
+      }
+
+      let retangulo = new Retangulo(5, 4);
+      console.log("Área do retângulo: " + retangulo.calcArea());
+
+      /*
+        2. Crie uma nova função tipo Conta, com as propriedades nome correntista, banco, numero da conta e saldo. Crie
+        utilizando herança duas novas funções: Corrente com Saldo Especial e Poupanca com Juros, Data Vencimento. 
+        Receber os dados via get e set. Criar um objeto de cada uma: Corrente e Poupanca e mostrar os seus dados.
+      */
+      function Conta(nome, banco, conta, saldo) {
+        this.nomeCorrentista = nome;
+        this.banco = banco;
+        this.numConta = conta;
+        this.saldo = saldo;
+      }
+
+      function Corrente() {
+        var saldoEspecial; // Private
+
+        this.getSaldoEspecial = () => saldoEspecial;
+        this.setSaldoEspecial = (value) => (saldoEspecial = value);
+      }
+
+      function Poupanca() {
+        var juros;
+        var dataVencimento;
+
+        this.getJuros = () => juros;
+        this.setJuros = (value) => (juros = value);
+
+        this.getDataVencimento = () => dataVencimento;
+        this.setDataVencimento = (value) => (dataVencimento = value);
+      }
+
+      Corrente.prototype = new Conta("José", 123, 123, 500.42);
+      Poupanca.prototype = new Conta("Maria", 456, 456, 2005.76);
+
+      corrente = new Corrente();
+      corrente.setSaldoEspecial(631.8);
+      console.log(
+        "Nome: " +
+          corrente.nomeCorrentista +
+          "\nBanco: " +
+          corrente.banco +
+          "\nNúmero conta: " +
+          corrente.numConta +
+          "\nSaldo: R$" +
+          corrente.saldo +
+          "\nSaldo especial: R$" +
+          corrente.getSaldoEspecial()
+      );
+
+      poupanca = new Poupanca();
+      poupanca.setDataVencimento("27/09/2008");
+      poupanca.setJuros(6);
+      console.log(
+        "Nome: " +
+          poupanca.nomeCorrentista +
+          "\nBanco: " +
+          poupanca.banco +
+          "\nNúmero conta: " +
+          poupanca.numConta +
+          "\nSaldo: R$" +
+          poupanca.saldo +
+          "\nJuros: " +
+          poupanca.getJuros() +
+          "%" +
+          "\nData vencimento: " +
+          poupanca.getDataVencimento()
+      );
+    </script>
+  </body>
+</html>
