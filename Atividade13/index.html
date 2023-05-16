@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 13</title>
+  </head>
+  <body>
+    <form action="" name="teste">
+      Texto
+      <input type="text" name="" id="texto" placeholder="Digite aqui" size="20" maxlength="20" onclick="reset()" />
+      <br />
+      Maiúsculas
+      <input type="checkbox" name="opcao1" id="opcao1" value="1" onclick="tudoMaiusc()" />
+      <br />
+      Minúsculas
+      <input type="checkbox" name="opcao2" id="opcao2" value="2" onclick="tudoMinusc()" />
+    </form>
+
+    <script>
+      let txt = document.getElementById("texto");
+
+      function tudoMaiusc() {
+        txt.value = txt.value.toUpperCase();
+        document.forms.teste.opcao2.checked = false;
+      }
+
+      function tudoMinusc() {
+        txt.value = txt.value.toLowerCase();
+        document.forms.teste.opcao1.checked = false;
+      }
+
+      function reset() {
+        document.forms.teste.opcao1.checked = false;
+        document.forms.teste.opcao2.checked = false;
+      }
+    </script>
+  </body>
+</html>
