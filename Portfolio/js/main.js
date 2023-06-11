@@ -1,42 +1,42 @@
 /* Open and close menu - onclick icons: burger and x */
-const nav = document.querySelector('#header nav')
-const toggle = document.querySelectorAll('nav .toggle')
+const nav = document.querySelector("#header nav");
+const toggle = document.querySelectorAll("nav .toggle");
 
 for (const element of toggle) {
-  element.addEventListener('click', function () {
-    nav.classList.toggle('show')
-  })
+  element.addEventListener("click", function () {
+    nav.classList.toggle("show");
+  });
 }
 
 /* Hide menu - onclick li item */
-const links = document.querySelectorAll('nav ul li a')
+const links = document.querySelectorAll("nav ul li a");
 
 for (const link of links) {
-  link.addEventListener('click', function () {
-    nav.classList.remove('show')
-  })
+  link.addEventListener("click", function () {
+    nav.classList.remove("show");
+  });
 }
 
 /* Change page header - onscroll */
-const header = document.querySelector('#header')
-const navHeight = header.offsetHeight
+const header = document.querySelector("#header");
+const navHeight = header.offsetHeight;
 
 function changeHeaderWhenScroll() {
   if (window.scrollY >= navHeight) {
     // Window scroll is higher than header height
-    header.classList.add('scroll')
+    header.classList.add("scroll");
   } else {
     // Lower than header height
-    header.classList.remove('scroll')
+    header.classList.remove("scroll");
   }
 }
 
-/* Testimonials carousel slider swiper */
-const swiper = new Swiper('.swiper', {
+/* Projects carousel slider swiper */
+const swiper = new Swiper(".swiper", {
   slidesPerView: 1,
   pagination: {
-    el: '.swiper-pagination',
-    clickable: true
+    el: ".swiper-pagination",
+    clickable: true,
   },
   mousewheel: true,
   keyboard: true,
@@ -49,70 +49,66 @@ const swiper = new Swiper('.swiper', {
   breakpoints: {
     767: {
       slidesPerView: 2,
-      setWrapperSize: true
-    }
-  }
-})
+      setWrapperSize: true,
+    },
+  },
+});
 
 /* Scrollreveal: Show elements onscroll */
-const scrollReveal = ScrollReveal ({
-  origin: 'top',
-  distance: '30px',
+const scrollReveal = ScrollReveal({
+  origin: "top",
+  distance: "30px",
   duration: 700,
-  reset: true
-})
+  reset: true,
+});
 
 scrollReveal.reveal(
   `#home .image, #home .text,
   #about .image, #about .text,
   #services header, #services .card,
-  #testimonials header, #testimonials .testimonials,
+  #projects header, #projects .projects,
   #contact .text, #contact .links,
   footer .brand, footer .social
   `,
   { interval: 100 }
-)
+);
 
 /* Button: Back to top */
-const backToTopButton = document.querySelector('.back-to-top')
+const backToTopButton = document.querySelector(".back-to-top");
 
 function backToTop() {
   if (window.scrollY >= 750) {
-    backToTopButton.classList.add('show')
+    backToTopButton.classList.add("show");
   } else {
-    backToTopButton.classList.remove('show')
+    backToTopButton.classList.remove("show");
   }
 }
 
 /* Menu highlight on current section */
-const sections = document.querySelectorAll('main section[id]')
+const sections = document.querySelectorAll("main section[id]");
 
 function activateMenuAtCurrentSection() {
-  const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4
+  const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4;
 
   for (const section of sections) {
-    const sectionTop = section.offsetTop
-    const sectionHeight = section.offsetHeight
-    const sectionId = section.getAttribute('id')
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.getAttribute("id");
 
-    const checkpointStart = checkpoint >= sectionTop
-    const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+    const checkpointStart = checkpoint >= sectionTop;
+    const checkpointEnd = checkpoint <= sectionTop + sectionHeight;
 
     if (checkpointStart && checkpointEnd) {
-      document
-        .querySelector('nav ul li a[href*=' + sectionId + ']')
-        .classList.add('active')
+      document.querySelector("nav ul li a[href*=" + sectionId + "]").classList.add("active");
     } else {
-      document
-        .querySelector('nav ul li a[href*=' + sectionId + ']')
-        .classList.remove('active')
+      document.querySelector("nav ul li a[href*=" + sectionId + "]").classList.remove("active");
     }
   }
 }
 
 /* When Scroll */
-window.addEventListener('scroll', function () {
-  changeHeaderWhenScroll()
-  backToTop()
-  activateMenuAtCurrentSection()
-})
+window.addEventListener("scroll", function () {
+  changeHeaderWhenScroll();
+  backToTop();
+  activateMenuAtCurrentSection();
+});

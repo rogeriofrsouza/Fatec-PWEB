@@ -11,6 +11,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: var(--text-color);
 }
 
 /*==== VARIABLES ==================================*/
@@ -53,13 +54,25 @@ body {
   font: 700 var(--title-font-size) var(--title-font);
   color: var(--title-color);
   -webkit-font-smoothing: auto;
+
   letter-spacing: -0.5px;
+  line-height: 1.05;
 }
 
-img,
-svg {
+p {
+  line-height: 1.6;
+}
+
+img {
   width: 100%;
   height: auto;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
 }
 
 .button {
@@ -344,11 +357,9 @@ nav.show div.icon-close {
   text-align: center;
 }
 
-.card i {
-  display: block;
-  margin-bottom: 1.5rem;
-  font-size: 5rem;
-  color: var(--base-color);
+.card svg {
+  width: 40px;
+  height: 40px;
 }
 
 .card .title {
@@ -356,55 +367,30 @@ nav.show div.icon-close {
   margin-bottom: 0.75rem;
 }
 
-/*==== TESTIMONIALS ===================================*/
-#testimonials {
+/*==== PROJECTS ===================================*/
+#projects {
   background: white;
 }
 
-#testimonials .container {
+#projects .container {
   margin-left: 0;
   margin-right: 0;
 }
 
-#testimonials header {
+#projects header {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   margin-bottom: 0;
 }
 
-#testimonials blockquote {
-  padding: 2rem;
+#projects .blockquote {
+  /* padding: 2rem; */
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
   border-radius: 0.25rem;
 }
 
-#testimonials blockquote p {
-  position: relative;
-  text-indent: 1.875rem;
-  margin-bottom: 1.5rem;
-  color: var(--title-color);
-}
-
-#testimonials blockquote p span {
-  font: 700 2.5rem serif;
-  position: absolute;
-  top: -0.375rem;
-  left: -1.875rem;
-  color: var(--base-color);
-}
-
-#testimonials cite {
-  display: flex;
-  align-items: center;
-  font-style: normal;
-}
-
-#testimonials cite img {
-  width: 2rem;
-  height: 2rem;
-  object-fit: cover;
-  clip-path: circle();
-  margin-right: 0.5rem;
+#projects .blockquote img {
+  border-radius: 0.25rem;
 }
 
 /* Swiper */
@@ -448,6 +434,12 @@ nav.show div.icon-close {
 
 #contact ul li i {
   color: var(--base-color);
+}
+
+#contact svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
 }
 
 /*==== FOOTER ===================================*/
@@ -564,7 +556,7 @@ footer .social a {
   }
 
   .section header,
-  #testimonials header {
+  #projects header {
     max-width: 32.68rem;
     text-align: center;
     margin-left: auto;
@@ -639,8 +631,8 @@ footer .social a {
     padding-right: 3rem;
   }
 
-  /* Testimonials */
-  #testimonials .container {
+  /* projects */
+  #projects .container {
     margin-left: auto;
     margin-right: auto;
   }
